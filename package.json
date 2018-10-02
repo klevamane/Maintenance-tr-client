@@ -4,9 +4,36 @@
   "description": "Maintenance tracker client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage -u",
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/Client/tests/testSetup.js",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "modulePaths": [
+      "src"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 40,
+        "functions": 30,
+        "lines": 50,
+        "statements": 50
+      }
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ]
   },
   "repository": {
     "type": "git",
@@ -47,7 +74,11 @@
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "jest": "^23.6.0",
     "redux-devtools-extension": "^2.13.5",
+    "sinon": "^6.3.4",
     "webpack-dev-server": "^3.1.5"
   }
 }
