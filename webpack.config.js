@@ -23,6 +23,12 @@ module.exports = {
             options: { presets: ['env', 'react'] },
           },
           {
+            test: /\.(sc|c)ss$/,
+            use: [
+              'style-loader', 'css-loader', 'sass-loader',
+            ],
+          },
+          {
             test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: 'file-loader',
           },
