@@ -37,7 +37,7 @@ module.exports = {
             loader: 'url-loader?limit=5000&mimetype=application/font-woff',
           },
           {
-            test: /\.(jpg|png)$/,
+            test: /\.(jpg|png,gif)$/,
             loader: 'url-loader?limit=5000',
           },
           {
@@ -55,5 +55,10 @@ module.exports = {
           new HtmlWebpackPlugin({
             template: './Client/index.html'
           })
-      ]
+      ],
+      devServer: {
+        port: 8080,
+        open: true,
+        historyApiFallback: true,
+      },
 }
