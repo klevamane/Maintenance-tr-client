@@ -1,0 +1,35 @@
+ul.navi {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $navBarColour;
+}
+
+li.navilist {
+    float: left;
+}
+
+li.navilist a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.navilist a:hover {
+    background-color: $primaryOrange;
+}
+
+#navfix {
+    color: $primaryOrange;
+}
+
+
+/* Implement as long as screen is not greater than 768px */
+@media (min-width: 477px) {
+    #logoutlink {
+        float: right;
+    }
+}
