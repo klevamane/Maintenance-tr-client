@@ -20,19 +20,19 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import indexViewComponent from '../views/indexViewComponent';
+import IndexViewComponent from '../views/IndexViewComponent';
 import LoginForm from '../components/LoginFormComponent';
-import broadway from '../components/broadway';
 import SignupComponent from '../views/SignupComponent';
+import SuccessfulRegistrationComponent from '../views/SuccessfulRegistrationComponent';
 
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={indexViewComponent} />
+      <Route exact path="/" component={IndexViewComponent} />
       <Route exact path="/signup" component={SignupComponent} />
       <Route exact path="/category" component={LoginForm} />
-      <Route exact path="/broadway" component={broadway} />
+      <Route exact path="/success" component={SuccessfulRegistrationComponent} />
     </Switch>
   </BrowserRouter>
 );
