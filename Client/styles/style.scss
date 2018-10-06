@@ -650,3 +650,43 @@
     #description {
         resize: none;
     }
+    .controlerror {
+        border: 2px solid rgb(247, 89, 40) !important;
+        border-radius: 4px !important;
+    }
+
+    .invalidfeedback {
+        display: block;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #dc3545;
+      }
+
+      .inputbordererror {
+        border: 2px solid rgb(247, 89, 40) !important;
+        border-radius: 4px !important;
+        }
+
+        .centerdiv {
+            margin: auto;
+            margin-top: 250px;
+            width: 80%;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+            }
+        .increasedcard {
+            max-width: 600px !important;
+        }
+
+        .significantlink {
+            color: var(--primaryOrange);
+            text-decoration: none;
+        }
+
+        .secondarybackground {
+            margin: 0;
+            padding: 0;
+            background:   rgb(244, 246, 248);
+        }
