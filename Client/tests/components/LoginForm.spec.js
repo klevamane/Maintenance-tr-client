@@ -21,6 +21,6 @@ describe('Component: LoginFormComponent', () => {
   });
 
   it('should check for the number of Link items', () => {
-    expect(wrapper.find('Link').length).toEqual(2);
+    expect(wrapper.find('Link').length).toEqual(1);
   });
 });
