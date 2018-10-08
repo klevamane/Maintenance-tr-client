@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import LoginForm from '../components/LoginFormComponent';
-import NavbarHomeComponent from '../components/NavbarHomeComponent';
+import Navbar from '../components/Navbar';
 import { loginUser } from '../actions/authActions';
 import isObjectEmpty from '../helpers/isObjectEmpty';
 
@@ -82,7 +82,7 @@ export class IndexViewComponent extends Component {
     const { errors, loading } = this.state;
     return (
       <div>
-        <NavbarHomeComponent />
+        <Navbar />
         <div className="container">
           <div className="seperator2">
             <div className="caption">
@@ -126,6 +126,7 @@ IndexViewComponent.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
+  login: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 import errorsReducer from './errorsReducer';
+import requestReducer from './requestReducer';
 
 
 export default combineReducers({
@@ -10,4 +11,5 @@ export default combineReducers({
   // add reducers here
   auth: authReducer,
   errors: errorsReducer,
+  request: requestReducer,
 });

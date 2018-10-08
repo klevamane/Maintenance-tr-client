@@ -14,6 +14,12 @@ export const setcurrenUser = (decoded) => {
   };
 };
 
+export const logout = () => (dispatch) => {
+  localStorage.removeItem('jwtMtr');
+  setAuthenticationToken(false);
+  dispatch(setcurrenUser({}));
+};
+
 export const signup = (userData, history) => (dispatch) => {
   dispatch(setloader());
   return axios
@@ -37,7 +43,7 @@ export const loginUser = (userData, history) => (dispatch) => {
       const decodedJwtDetails = jwtDecode(token);
 
       dispatch(setcurrenUser(decodedJwtDetails));
-      return history.push('/success');
+      return history.push('/user');
     })
     .catch(err => dispatch({
       type: GET_ERRORS,

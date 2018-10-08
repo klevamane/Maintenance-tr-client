@@ -1,15 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect as exp } from 'chai';
-import { IndexViewComponent } from '../../views/IndexViewComponent';
+import { IndexViewComponent } from '../../views/indexViewComponent';
 
-const componentState = {
-  email: '',
-  password: '',
-  loading: false,
-  errors: {},
-};
-const componentBody = document.body.classList;
+
 const prevProps = {
   email: '',
   password: '',
@@ -21,16 +15,6 @@ const prevProps = {
   },
 };
 
-const nextProps = {
-  email: '',
-  password: '',
-  loading: true,
-  errors: {
-    errors: {
-      password: 'Invalid password too',
-    },
-  },
-};
 describe('Component: IndexView Component', () => {
   const props = {
     login: () => {},
@@ -58,9 +42,7 @@ describe('Component: IndexView Component', () => {
       errors: {},
 
     });
-    const e = {
-      preventDefault: () => {},
-    };
+
     wrapper.update();
     expect(wrapper.instance().onchange({ target: { value: 'name' } })).toBe(true);
   });
