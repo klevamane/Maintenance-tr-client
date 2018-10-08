@@ -1,4 +1,4 @@
-import { CREATE_REQUEST, REQUEST_LOADING } from '../actions/types';
+import { CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST } from '../actions/types';
 
 const initialState = {
   manyrequests: null,
@@ -17,6 +17,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: true,
+      };
+    case VIEW_REQUEST:
+      return {
+        ...state,
+        loading: false,
+        payload: action.payload,
       };
     default:
       return state;

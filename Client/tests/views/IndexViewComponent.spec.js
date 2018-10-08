@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect as exp } from 'chai';
 import { IndexViewComponent } from '../../views/indexViewComponent';
 
 
@@ -67,11 +66,6 @@ describe('Component: IndexView Component', () => {
     const actual = wrapper.state().loading;
     wrapper.instance().handleComponentState();
     expect(actual).toBe(false);
-  });
-
-  it('Should unmount component and update body css to null', () => {
-    wrapper.instance().componentWillUnmount();
-    wrapper.update();
   });
 
   it('Should handle submit', () => {

@@ -21,10 +21,10 @@ export class IndexViewComponent extends Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
-  componentDidMount() {
-    document.body.classList = 'indexbg nobody-margin';
-    document.body.id = 'primary-background';
-  }
+  // componentDidMount() {
+  //   document.body.classList = 'indexbg nobody-margin';
+  //   document.body.id = 'primary-background';
+  // }
 
   componentDidUpdate(prevProps) {
     const { errors } = this.props;
@@ -33,10 +33,10 @@ export class IndexViewComponent extends Component {
     }
   }
 
-  componentWillUnmount() {
-    document.body.classList = '';
-    document.body.id = '';
-  }
+  // componentWillUnmount() {
+  //   document.body.classList = '';
+  //   document.body.id = '';
+  // }
 
   onchange(e) {
     this.setState({ [e.target.name]: e.target.value });
