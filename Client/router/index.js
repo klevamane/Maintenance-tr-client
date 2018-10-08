@@ -7,6 +7,7 @@ import SignupComponent from '../views/SignupComponent';
 import SuccessfulRegistrationComponent from '../views/SuccessfulRegistrationComponent';
 import UserArea from '../views/UserArea';
 import PrivateRouteComponent from '../helpers/PrivateRouteComponent';
+import SingleRequest from '../views/SingleRequestComponent';
 
 
 const Routes = () => (
@@ -17,6 +18,7 @@ const Routes = () => (
       <Route exact path="/category" component={LoginForm} />
       <Route exact path="/success" component={SuccessfulRegistrationComponent} />
       <PrivateRouteComponent exact path="/user" component={UserArea} />
+      <PrivateRouteComponent path="/view/:id" component={SingleRequest} />
     </Switch>
   </BrowserRouter>
 );

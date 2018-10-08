@@ -19,7 +19,7 @@ const props = {
 describe('Component: IndexView Component', () => {
   const wrapper = shallow(<UserArea />);
   const wrapper2 = shallow(<UserArea {...props} />);
-  
+
   it('should render the UserArea / Create request Component', () => {
     expect(wrapper.length).toBe(1);
   });
