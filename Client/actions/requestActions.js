@@ -1,7 +1,7 @@
 import axios from 'axios';
 // import jwtDecode from 'jwt-decode';
 import {
-  GET_ERRORS, CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST,
+  GET_ERRORS, CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST, EDIT_REQUEST,
 } from './types';
 // import setAuthenticationToken from '../helpers/setAuthenticationToken';
 
@@ -15,7 +15,21 @@ export const createRequest = (requestDetails, history) => (dispatch) => {
     .post('https://maintenancetr.herokuapp.com/api/v1/users/requests', requestDetails)
     .then((res) => {
       dispatch({ type: CREATE_REQUEST, payload: res.data });
-      history.push(`/view-request/${res.data.newRequest.id}`);
+      history.push(`/view/${res.data.newRequest.id}`);
+    })
+    .catch(err => dispatch({
+      type: GET_ERRORS,
+      payload: err.response.data,
+    }));
+};
+
+export const editRequest = (requestDetails, id, history) => (dispatch) => {
+  dispatch(setRequestLoader());
+  return axios
+    .put(`https://maintenancetr.herokuapp.com/api/v1/users/requests/${id}`, requestDetails)
+    .then((res) => {
+      dispatch({ type: EDIT_REQUEST, payload: res.data });
+      history.push(`/view/${id}`);
     })
     .catch(err => dispatch({
       type: GET_ERRORS,

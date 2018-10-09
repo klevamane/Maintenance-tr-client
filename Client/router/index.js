@@ -8,6 +8,7 @@ import SuccessfulRegistrationComponent from '../views/SuccessfulRegistrationComp
 import UserArea from '../views/UserArea';
 import PrivateRouteComponent from '../helpers/PrivateRouteComponent';
 import SingleRequest from '../views/SingleRequestComponent';
+import EditRequestComponent from '../views/EditRequestComponent.js';
 
 
 const Routes = () => (
@@ -19,6 +20,7 @@ const Routes = () => (
       <Route exact path="/success" component={SuccessfulRegistrationComponent} />
       <PrivateRouteComponent exact path="/user" component={UserArea} />
       <PrivateRouteComponent path="/view/:id" component={SingleRequest} />
+      <PrivateRouteComponent path="/edit/:id" component={EditRequestComponent} />
     </Switch>
   </BrowserRouter>
 );

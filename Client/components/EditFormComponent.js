@@ -5,8 +5,9 @@ import SelectListControl from './common/SelectListControl';
 import { selectOptionsFault, selectOptionRepair } from '../helpers/selectOptions';
 
 
-const UserAreaFormComponent = ({
-  submitRequest, updateControl, fault, repairOrMaintenance, errors, buttonValue,
+const EditFormComponent = ({
+  submitRequest, updateControl, fault, repairOrMaintenance, errors,
+  buttonValue, brand, modelnumber, description,
 }) => (
   <div>
     <div className="card-fluid marg-top30y userdashbord-card-dimension-react">
@@ -33,12 +34,12 @@ const UserAreaFormComponent = ({
         </span>
         <div className="form-group marg10">
           <label htmlFor="name">Brand</label>
-          <input type="text" name="brand" id="brand" onChange={updateControl} className={classnames('', { controlerror: errors.brand })} />
+          <input type="text" name="brand" id="brand" value={brand} onChange={updateControl} className={classnames('', { controlerror: errors.brand })} />
           {errors.brand && (<div className="invalidfeedback">{errors.brand}</div>)}
         </div>
         <div className="form-group marg10">
           <label htmlFor="modelnumber">Model Number</label>
-          <input type="text" name="modelnumber" id="modelnumber" onChange={updateControl} className={classnames('', { controlerror: errors.brand })} />
+          <input type="text" name="modelnumber" id="modelnumber" value={modelnumber} onChange={updateControl} className={classnames('', { controlerror: errors.brand })} />
           {errors.modelnumber && (<div className="invalidfeedback">{errors.modelnumber}</div>)}
         </div>
         <div className="form-group marg10">
@@ -65,7 +66,7 @@ const UserAreaFormComponent = ({
         </div>
         <div className="form-group marg10">
           <label htmlFor="password">Describe the issue</label>
-          <textarea name="description" id="description" cols="30" onChange={updateControl} rows="10" placeholder="Enter a maximum of 250 characters" className={classnames('', { controlerror: errors.brand })} />
+          <textarea name="description" id="description" value={description} cols="30" onChange={updateControl} rows="10" placeholder="Enter a maximum of 250 characters" className={classnames('', { controlerror: errors.brand })} />
           {errors.description && (<div className="invalidfeedback">{errors.description}</div>)}
         </div>
         <p className="marg10">
@@ -76,9 +77,12 @@ const UserAreaFormComponent = ({
   </div>
 );
 
-UserAreaFormComponent.propTypes = {
+EditFormComponent.propTypes = {
   submitRequest: PropTypes.func.isRequired,
   updateControl: PropTypes.func.isRequired,
+  brand: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  modelnumber: PropTypes.string.isRequired,
   buttonValue: PropTypes.string.isRequired,
   fault: PropTypes.string.isRequired,
   repairOrMaintenance: PropTypes.string.isRequired,
@@ -86,4 +90,4 @@ UserAreaFormComponent.propTypes = {
 
 };
 
-export default UserAreaFormComponent;
+export default EditFormComponent;

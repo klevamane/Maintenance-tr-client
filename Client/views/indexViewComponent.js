@@ -45,14 +45,14 @@ export class IndexViewComponent extends Component {
 
   submitForm(e) {
     e.preventDefault();
-    const { history } = this.props;
+    const { history, login } = this.props;
     const { email, password } = this.state;
 
     const userDetails = {
       email, password,
     };
 
-    this.props.login(userDetails, history);
+    login(userDetails, history);
     this.setState({
       loading: true,
     });
