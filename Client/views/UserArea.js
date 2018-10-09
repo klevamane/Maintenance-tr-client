@@ -27,7 +27,7 @@ export class UserArea extends Component {
 
   submitForm(e) {
     e.preventDefault();
-    const { history } = this.props;
+    const { history, createRequest } = this.props;
     const {
       brand, fault, modelnumber, description, other,
     } = this.state;
@@ -38,7 +38,7 @@ export class UserArea extends Component {
       description,
       other,
     };
-    this.props.createRequest(requestDetails, history);
+    createRequest(requestDetails, history);
   }
 
   render() {
@@ -63,6 +63,7 @@ export class UserArea extends Component {
             fault={fault}
             repairOrMaintenance={other}
             errors={formErrors}
+            buttonValue="make request"
           />
 
         </div>

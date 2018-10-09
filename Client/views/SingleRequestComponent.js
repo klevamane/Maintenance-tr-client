@@ -33,10 +33,10 @@ export class SingleRequestComponent extends Component {
       // let statusIndicator;
 
       const {
-        fault, description, status, createdon,
+        fault, description, status, createdon, id,
       } = mtrequest.payload[0];
       editButton = (
-        <Link to="/edit" className="anchorbtn display-block-inline marg-top20y pull-right">
+        <Link to={`/edit/${id}`} className="anchorbtn display-block-inline marg-top20y pull-right">
 Modify this request
           <i className="fa fa-align-justify" />
         </Link>
