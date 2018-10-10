@@ -1,9 +1,12 @@
-import { CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST } from '../actions/types';
+import {
+  CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST, VIEW_USER_REQUESTS,
+} from '../actions/types';
 
 const initialState = {
   manyrequests: null,
   singlerequest: null,
   loading: false,
+  payload: [],
 };
 
 export default function (state = initialState, action) {
@@ -19,6 +22,12 @@ export default function (state = initialState, action) {
         loading: true,
       };
     case VIEW_REQUEST:
+      return {
+        ...state,
+        loading: false,
+        payload: action.payload,
+      };
+    case VIEW_USER_REQUESTS:
       return {
         ...state,
         loading: false,

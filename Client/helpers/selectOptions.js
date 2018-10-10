@@ -20,3 +20,11 @@ export const selectOptionRepair = [
   { label: 'Maintenance', value: 'maintenance' },
   { label: 'Repair', value: 'repair' },
 ];
+
+export const selectOptionsFilter = [
+  { label: 'Select', value: '' },
+  { label: 'Inactive', value: 'Inactive' },
+  { label: 'Pending', value: 'Pending' },
+  { label: 'Resolved', value: 'Resolved' },
+  { label: 'Dissaproved', value: 'Dissaproved' },
+];

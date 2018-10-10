@@ -426,6 +426,13 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
     }
+
+    .alluserrequests {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
     
     .seperator2 {
         display: grid;
@@ -718,3 +725,8 @@
             margin: 40px auto;
             font-size: 20px;
         }
+
+        a, a:visited, a:hover, a:active {
+            color: inherit;
+            text-decoration: none;
+          }

@@ -29,7 +29,7 @@ export class SingleRequestComponent extends Component {
     if (mtrequest.loading && isObjectEmpty(errors)) {
       valu = (<div className="loader" id="loader" />);
     }
-    if (mtrequest && !isObjectEmpty(mtrequest.payload)) {
+    if ((mtrequest.payload && mtrequest.payload[0])) {
       // let statusIndicator;
 
       const {
@@ -64,10 +64,10 @@ Modify this request
             {}
             <h2 className="card-h2">Request Infomation</h2>
             <hr />
-            <a href="./userrequests.html" className="anchorbtn display-block-inline marg-top20y">
+            <Link to="/requests" className="anchorbtn display-block-inline marg-top20y">
 View all requests
               <i className="fa fa-align-justify" />
-            </a>
+            </Link>
             {editButton}
             <div id="viewrequestplachholder">
               {valu}

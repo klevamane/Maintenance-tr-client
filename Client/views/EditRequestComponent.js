@@ -27,8 +27,8 @@ export class EditRequestComponent extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.mtrequest.payload !== prevProps.mtrequest.payload) {
-      const { mtrequest } = this.props;
+    const { mtrequest } = this.props;
+    if (mtrequest.payload !== prevProps.mtrequest.payload) {
       if (mtrequest.payload) {
         this.setState({
           brand: mtrequest.payload[0].brand,
@@ -100,7 +100,6 @@ export class EditRequestComponent extends Component {
             modelnumber={modelnumber}
             description={description}
             buttonValue="Edit request"
-
           />
 
         </div>

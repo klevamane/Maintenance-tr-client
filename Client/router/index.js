@@ -9,6 +9,7 @@ import UserArea from '../views/UserArea';
 import PrivateRouteComponent from '../helpers/PrivateRouteComponent';
 import SingleRequest from '../views/SingleRequestComponent';
 import EditRequestComponent from '../views/EditRequestComponent.js';
+import Requests from '../views/Requests';
 
 
 const Routes = () => (
@@ -21,6 +22,7 @@ const Routes = () => (
       <PrivateRouteComponent exact path="/user" component={UserArea} />
       <PrivateRouteComponent path="/view/:id" component={SingleRequest} />
       <PrivateRouteComponent path="/edit/:id" component={EditRequestComponent} />
+      <PrivateRouteComponent exact path="/requests" component={Requests} />
     </Switch>
   </BrowserRouter>
 );
