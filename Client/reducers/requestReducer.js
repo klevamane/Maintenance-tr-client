@@ -1,5 +1,5 @@
 import {
-  CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST, VIEW_USER_REQUESTS,
+  CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST, VIEW_USER_REQUESTS, VIEW_EVERY_USERS_REQUESTS,
 } from '../actions/types';
 
 const initialState = {
@@ -28,6 +28,12 @@ export default function (state = initialState, action) {
         payload: action.payload,
       };
     case VIEW_USER_REQUESTS:
+      return {
+        ...state,
+        loading: false,
+        payload: action.payload,
+      };
+    case VIEW_EVERY_USERS_REQUESTS:
       return {
         ...state,
         loading: false,

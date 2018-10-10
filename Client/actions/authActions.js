@@ -7,12 +7,10 @@ export const setloader = () => ({
   type: LOADING,
 });
 
-export const setcurrenUser = (decoded) => {
-  return {
-    type: SET_CURRENT_USER,
-    payload: decoded,
-  };
-};
+export const setcurrenUser = decoded => ({
+  type: SET_CURRENT_USER,
+  payload: decoded,
+});
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem('jwtMtr');
@@ -36,13 +34,15 @@ export const loginUser = (userData, history) => (dispatch) => {
     .post('https://maintenancetr.herokuapp.com/api/v1/auth/login', userData)
     .then((res) => {
       const { token } = res.data;
-      // history.push('/success'))
       localStorage.setItem('jwtMtr', token);
       setAuthenticationToken(token);
 
       const decodedJwtDetails = jwtDecode(token);
 
       dispatch(setcurrenUser(decodedJwtDetails));
+      if (res.data.isadmin) {
+        return history.push('/admin');
+      }
       return history.push('/user');
     })
     .catch(err => dispatch({

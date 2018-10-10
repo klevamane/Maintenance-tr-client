@@ -1,9 +1,10 @@
 import axios from 'axios';
 // import jwtDecode from 'jwt-decode';
 import {
-  GET_ERRORS, CREATE_REQUEST, REQUEST_LOADING, VIEW_REQUEST, EDIT_REQUEST, VIEW_USER_REQUESTS,
+  GET_ERRORS, CREATE_REQUEST, REQUEST_LOADING,
+  VIEW_REQUEST, EDIT_REQUEST, VIEW_USER_REQUESTS, VIEW_EVERY_USERS_REQUESTS,
 } from './types';
-// import setAuthenticationToken from '../helpers/setAuthenticationToken';
+
 
 export const setRequestLoader = () => ({
   type: REQUEST_LOADING,
@@ -50,5 +51,13 @@ export const getUserRequests = () => (dispatch) => {
   return axios
     .get('https://maintenancetr.herokuapp.com/api/v1/users/requests')
     .then(res => dispatch({ type: VIEW_USER_REQUESTS, payload: res.data }))
+    .catch(err => dispatch({ type: GET_ERRORS, payload: err.response.data }));
+};
+
+export const getEveryUsersRequests = () => (dispatch) => {
+  dispatch(setRequestLoader());
+  return axios
+    .get('https://maintenancetr.herokuapp.com/api/v1/requests')
+    .then(res => dispatch({ type: VIEW_EVERY_USERS_REQUESTS, payload: res.data }))
     .catch(err => dispatch({ type: GET_ERRORS, payload: err.response.data }));
 };

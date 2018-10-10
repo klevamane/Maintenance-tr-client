@@ -30,8 +30,6 @@ export class SingleRequestComponent extends Component {
       valu = (<div className="loader" id="loader" />);
     }
     if ((mtrequest.payload && mtrequest.payload[0])) {
-      // let statusIndicator;
-
       const {
         fault, description, status, createdon, id,
       } = mtrequest.payload[0];
