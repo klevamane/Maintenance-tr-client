@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import SelectListControl from './common/SelectListControl';
 import { selectOptionsFault, selectOptionRepair } from '../helpers/selectOptions';
@@ -10,10 +11,10 @@ const UserAreaFormComponent = ({
 }) => (
   <div>
     <div className="card-fluid marg-top30y userdashbord-card-dimension-react">
-      <a href="./userrequests.html" className="anchorbtn">
+      <Link to="/requests" className="anchorbtn">
           Click here to view all your requests
         <i className="fa fa-arrow-circle-right" />
-      </a>
+      </Link>
       <form onSubmit={submitRequest} id="requestform">
         <div className="form-header">
           <div>

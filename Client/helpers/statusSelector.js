@@ -1,13 +1,13 @@
 const StatusSelector = (status) => {
   let statusIndicator;
   switch (status) {
-    case 'Rejected':
+    case 'Disapproved':
       statusIndicator = 'status-pill-rejected';
       break;
     case 'Pending':
       statusIndicator = 'status-pill-pending';
       break;
-    case 'Accepted':
+    case 'Resolved':
       statusIndicator = 'status-pill-accepted';
       break;
     default:
