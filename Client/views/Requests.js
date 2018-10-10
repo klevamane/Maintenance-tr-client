@@ -83,9 +83,8 @@ export class Requests extends Component {
               <option value="Inactive">Inactive</option>
               <option value="Resolved">Resolved</option>
               <option value="Pending">Pending</option>
-              <option value="Dissaproved">Disapproved</option>
+              <option value="Disaproved">Disapproved</option>
             </select>
-
           </span>
           <Link to="/user" className="anchorbtn">
             <i className="fa fa-arrow-circle-left" />
