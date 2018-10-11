@@ -3,9 +3,8 @@
 
 
 # Maintenance Tracker
-Maintenance Tracker App is an application that provides users with the ability to reach out to
-operations or repairs department regarding repair or maintenance requests and monitor the
-status of their request.
+Maintenance Tracker is an application that provides users with the ability to reach out to
+maintenance department regarding repair or maintenance of devicess by creating requests, with the provision of enhanced and monitoring services.
 
 # Getting Started
 
