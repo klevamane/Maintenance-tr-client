@@ -15,13 +15,26 @@ maintenance department regarding repair or maintenance of devicess by creating r
 ## Template URL
 * https://klevamane.github.io/Maintenance-tr/UI/Index.html
 
-## Api URL
-* https://maintenancetr.herokuapp.com
-
 ## Home URL
 * https://maintenancetr-client.herokuapp.com/
 
-## Api Documentation
+## Features
+The application has 2 types of users, the Admin user and the request user
+Admin
+* View all requests
+* Approver a request
+* Disapprove a request
+* Resolve a request
+* Filter requests by request status
+
+User(request)
+* Signup
+* Login
+* Create a request
+* Monitor reques status
+* View all user requests
+* Edit a request provided the request has not been approved
+
 * https://maintenancetr.herokuapp.com/api-docs/#
 
 ## User Access
