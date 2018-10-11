@@ -20,6 +20,7 @@ maintenance department regarding repair or maintenance of devicess by creating r
 
 ## Features
 The application has 2 types of users, the Admin user and the request user
+
 Admin
 * View all requests
 * Approver a request
@@ -50,7 +51,7 @@ Admin user
 * Copy repository link
 * Create a folder location in your computer eg my/path/
 * cd my/path/
-* git clone repositorylink.git
+* git clone `https://github.com/andela/fargo-ah-client.git`
 * cd maintenance-tr-client
 * npm install
 * npm run dev
