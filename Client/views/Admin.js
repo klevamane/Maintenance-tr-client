@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getEveryUsersRequests } from '../actions/requestActions';
+import { getEveryUsersRequests, disapproveArequest } from '../actions/requestActions';
 import isObjectEmpty from '../helpers/isObjectEmpty';
+import Navbar from '../components/Navbar';
 
 export class Admin extends Component {
   constructor(props) {
@@ -15,8 +16,7 @@ export class Admin extends Component {
   }
 
   componentDidMount() {
-    const { everyUsersRequests, mtrequests } = this.props;
-    console.log('TWTWTWTWTWT*******', mtrequests);
+    const { everyUsersRequests } = this.props;
     everyUsersRequests();
   }
 
@@ -24,12 +24,12 @@ export class Admin extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-
   render() {
     let displaySearchCards;
     let theRequests;
     let filteredRequests;
-    const { mtrequests, errors } = this.props;
+    let newloader;
+    const { mtrequests, errors, disapprove } = this.props;
     const { filter } = this.state;
 
 
@@ -41,11 +41,10 @@ export class Admin extends Component {
     );
 
     if (mtrequests.loading && isObjectEmpty(errors)) {
-      displaySearchCards = (<div className="loader" id="loader" />);
+      newloader = (<div className="loader centeralizeloader" id="loader" />);
     }
 
-    if (!isObjectEmpty(mtrequests.payload.message)) {
-      console.log('TODAY EHHH*******', mtrequests);
+    if (!isObjectEmpty(mtrequests.payload) && mtrequests.payload.allRequests) {
       theRequests = mtrequests.payload.allRequests;
       if (filter !== '') {
         filteredRequests = theRequests.filter(request => request.name === filter);
@@ -59,14 +58,15 @@ export class Admin extends Component {
           <td data-label="Fault">{request.fault}</td>
           <td data-label="Type">{request.other}</td>
           <td data-label="Status">{request.name}</td>
-          <td data-label="View"><a href="./Request-info.html" className="btn view-detail">view</a></td>
-          <td data-label="Cancel"><button className="danger"><i className="fa fa-trash"> Cancel Request</i></button></td>
+          <td data-label="View"><Link to={`/change-status/${request.id}`} className="btn view-detail">view</Link></td>
+          <td data-label="Cancel"><button type="button" onClick={() => disapprove(request.id)} className="danger"><i className="fa fa-trash"> Cancel Request</i></button></td>
         </tr>
       ));
     }
 
     return (
       <div>
+        <Navbar />
         <div className="container">
           <div>
             <h2 className="card-h2">Request Infomation</h2>
@@ -98,20 +98,10 @@ export class Admin extends Component {
                 </tr>
               </thead>
               <tbody id="tablebody">
-                <tr>
-                  <td data-label="Request Id">1</td>
-                  <td data-label="Brand">Haier Thermocool</td>
-                  <td data-label="Fault">Broken Screen</td>
-                  <td data-label="Type">Maintenance</td>
-                  <td data-label="Status">Pending</td>
-                  <td data-label="View"><a href="./Request-info.html" className="btn view-detail">view</a></td>
-                  <td data-label="Cancel"><button className="danger"><i className="fa fa-trash"> Cancel Request</i></button></td>
-                </tr>
                 {displaySearchCards}
               </tbody>
             </table>
-            <div className="loader" id="loader" />
-
+            {newloader}
           </div>
 
         </div>
@@ -124,6 +114,7 @@ Admin.propTypes = {
   errors: PropTypes.arrayOf(PropTypes.object).isRequired,
   mtrequests: PropTypes.objectOf(PropTypes.array).isRequired,
   everyUsersRequests: PropTypes.func.isRequired,
+  disapprove: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -134,4 +125,5 @@ const mapStateToProps = state => ({
 
 
 export default
-connect(mapStateToProps, { everyUsersRequests: getEveryUsersRequests })(withRouter(Admin));
+connect(mapStateToProps,
+  { everyUsersRequests: getEveryUsersRequests, disapprove: disapproveArequest })(withRouter(Admin));

@@ -5,6 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { getArequest } from '../actions/requestActions';
 import isObjectEmpty from '../helpers/isObjectEmpty';
+import Navbar from '../components/Navbar';
 import StatusSelector from '../helpers/statusSelector';
 
 export class SingleRequestComponent extends Component {
@@ -57,6 +58,7 @@ Modify this request
 
     return (
       <div>
+        <Navbar />
         <div className="container">
           <div>
             {}

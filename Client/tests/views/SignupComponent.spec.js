@@ -55,10 +55,10 @@ describe('Component: IndexView Component', () => {
     wrapper.instance().componentDidUpdate(prevProps);
   });
 
-  it('Should unmount component and update body css to empty', () => {
-    wrapper.instance().componentWillUnmount();
-    wrapper.update();
-  });
+  // it('Should unmount component and update body css to empty', () => {
+  //   wrapper.instance().componentWillUnmount();
+  //   wrapper.update();
+  // });
 
   it('Should handle input change', () => {
     wrapper.setState({

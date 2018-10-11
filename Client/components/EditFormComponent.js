@@ -19,7 +19,7 @@ const EditFormComponent = ({
       <form onSubmit={submitRequest} id="requestform">
         <div className="form-header">
           <div>
-            <span id="logo1">Make a reques</span>
+            <span id="logo1">Edit a reques</span>
             <span id="logo2">t</span>
           </div>
           <div className="cardlogo-icon">
@@ -67,7 +67,7 @@ const EditFormComponent = ({
         </div>
         <div className="form-group marg10">
           <label htmlFor="password">Describe the issue</label>
-          <textarea name="description" id="description" value={description} cols="30" onChange={updateControl} rows="10" placeholder="Enter a maximum of 250 characters" className={classnames('', { controlerror: errors.brand })} />
+          <textarea name="description" id="description" value={description} cols="30" onChange={updateControl} rows="10" maxLength="250" placeholder="Enter a maximum of 250 characters" className={classnames('', { controlerror: errors.brand })} />
           {errors.description && (<div className="invalidfeedback">{errors.description}</div>)}
         </div>
         <p className="marg10">

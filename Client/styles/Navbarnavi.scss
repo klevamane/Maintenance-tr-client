@@ -4,6 +4,7 @@ ul.navi {
     padding: 0;
     overflow: hidden;
     background-color: $navBarColour;
+    border-bottom: 2px solid var(--primaryOrange);
 }
 
 li.navilist {

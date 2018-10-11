@@ -23,21 +23,11 @@ export class SignupComponent extends Component {
   }
 
 
-  componentDidMount() {
-    document.body.classList = 'indexbg nobody-margin';
-    document.body.id = 'primary-background';
-  }
-
   componentDidUpdate(prevProps) {
     const { errors } = this.props;
     if (errors !== prevProps.errors) {
       this.handleComponentState();
     }
-  }
-
-  componentWillUnmount() {
-    document.body.classList = '';
-    document.body.id = '';
   }
 
   onchange(e) {

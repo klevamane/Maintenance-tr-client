@@ -11,6 +11,7 @@ import SingleRequest from '../views/SingleRequestComponent';
 import EditRequestComponent from '../views/EditRequestComponent.js';
 import Requests from '../views/Requests';
 import Admin from '../views/Admin';
+import RequestStatus from '../views/RequestStatus';
 
 
 const Routes = () => (
@@ -25,6 +26,7 @@ const Routes = () => (
       <PrivateRouteComponent path="/edit/:id" component={EditRequestComponent} />
       <PrivateRouteComponent exact path="/requests" component={Requests} />
       <PrivateRouteComponent exact path="/admin" component={Admin} />
+      <PrivateRouteComponent exact path="/change-status/:id" component={RequestStatus} />
     </Switch>
   </BrowserRouter>
 );
