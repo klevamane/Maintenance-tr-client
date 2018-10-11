@@ -65,24 +65,8 @@ The develop branch is positioned currently as the default branch due to the on-g
 
 ## Testing
 
-Test locally by executing "npm run test-dl"
-```
-info: Server is running on port 3000
-  POST USER /user
-POST /api/v1/auth/signup 201 117.828 ms - 63
-    ✓ should create a new user (148ms)
-POST /api/v1/auth/signup 400 3.144 ms - 52
-    ✓ Mobile number should be of nigerian format
-POST /api/v1/auth/signup 400 1.553 ms - 48
-    ✓ Lastname must contain only alphabets
-POST /api/v1/auth/signup 400 0.960 ms - 50
-    ✓ You must provide a valid email address
-POST /api/v1/auth/signup 400 1.013 ms - 49
-    ✓ Firstname must contain only alphabets
-    
-    
-  30 passing (500ms)
-  ```
+Test locally by executing "npm test"
+
 
 # Built with
 1. ReactJs
