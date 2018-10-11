@@ -36,7 +36,6 @@ User(request)
 * View all user requests
 * Edit a request provided the request has not been approved
 
-* https://maintenancetr.herokuapp.com/api-docs/#
 
 ## User Access
 Admin user
@@ -59,16 +58,16 @@ Admin user
 
 ## Routes
 ```
-* PUT https://maintenancetr.herokuapp.com/api/v1/users/requests/:requestId - Modify a user request
-* GET https://maintenancetr.herokuapp.com/api/v1/users/requests - List all user requests
-* GET https://maintenancetr.herokuapp.com/api/v1/requests - List all users requests
-* GET https://maintenancetr.herokuapp.com/api/v1/users/requests/:requestid - List a user request by Id
-* PUT https://maintenancetr.herokuapp.com/api/v1/requests/:requestId/approve - Approve a user request
-* PUT https://maintenancetr.herokuapp.com/api/v1/requests/:requestId/disapprove - Disapprove a user request
-* PUT https://maintenancetr.herokuapp.com/api/v1/requests/:requestId/resolve - Resolve a user request
-* POST https://maintenancetr.herokuapp.com/api/v1/auth/signup - Register a new user
-* POST https://maintenancetr.herokuapp.com/api/v1/auth/login - Authenticate registered user
-* POST https://maintenancetr.herokuapp.com/api/v1/users/requests -Create a user request
+* PUT https://maintenancetr-tr-client.herokuapp.com/api/v1/users/requests/:requestId - Modify a user request
+* GET https://maintenancetr-tr-client.herokuapp.com/api/v1/users/requests - List all user requests
+* GET https://maintenancetr-tr-client.herokuapp.com/api/v1/requests - List all users requests
+* GET https://maintenancetr-tr-client.herokuapp.com/api/v1/users/requests/:requestid - List a user request by Id
+* PUT https://maintenancetr-tr-client.herokuapp.com/api/v1/requests/:requestId/approve - Approve a user request
+* PUT https://maintenancetr-tr-client.herokuapp.com/api/v1/requests/:requestId/disapprove - Disapprove a user request
+* PUT https://maintenancetr-tr-client.herokuapp.com/api/v1/requests/:requestId/resolve - Resolve a user request
+* POST https://maintenancetr-tr-client.herokuapp.com/api/v1/auth/signup - Register a new user
+* POST https://maintenancetr-tr-client.herokuapp.com/api/v1/auth/login - Authenticate registered user
+* POST https://maintenancetr-tr-client.herokuapp.com/api/v1/users/requests -Create a user request
  
  ```
 
@@ -86,7 +85,8 @@ Test locally by executing "npm test"
 2. Html
 3. Css
 4. Javascript
-4. Axios
+5. Axios
+6. Redux
 
 # Contributors
 * Onengiye Richard (klevamane)
