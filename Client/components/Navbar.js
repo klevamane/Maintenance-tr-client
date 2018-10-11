@@ -53,7 +53,7 @@ export class Navbar extends Component {
             <span id="navfix">fix</span>
           </Link>
         </li>
-        <li className="navilist "><Link to="/admin" onClick={this.onLogoutClick}>Dashboard</Link></li>
+        <li className="navilist "><Link to="/admin">Dashboard</Link></li>
         <li className="navilist navlogout"><a href="#" onClick={this.onLogoutClick}>Logout</a></li>
       </ul>
     );
