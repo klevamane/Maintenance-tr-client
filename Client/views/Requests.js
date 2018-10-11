@@ -5,6 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { getUserRequests } from '../actions/requestActions';
 import isObjectEmpty from '../helpers/isObjectEmpty';
+import Navbar from '../components/Navbar';
 import StatusSelector from '../helpers/statusSelector';
 
 export class Requests extends Component {
@@ -71,33 +72,33 @@ export class Requests extends Component {
     }
 
     return (
-      <div className="container">
-        <div>
-          <h2 className="card-h2">Request Made</h2>
-          <hr />
+      <div>
+        <Navbar />
+        <div className="container">
+          <div>
+            <h2 className="card-h2">Request Made</h2>
+            <hr />
 
-          <span>Filter by</span>
-          <span>
-            <select name="filter" className="status-quo" onChange={this.onchange}>
-              <option value="">Select</option>
-              <option value="Inactive">Inactive</option>
-              <option value="Resolved">Resolved</option>
-              <option value="Pending">Pending</option>
-              <option value="Disaproved">Disapproved</option>
-            </select>
-          </span>
-          <Link to="/user" className="anchorbtn">
-            <i className="fa fa-arrow-circle-left" />
+            <span>Filter by</span>
+            <span>
+              <select name="filter" className="status-quo" onChange={this.onchange}>
+                <option value="">Select</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Resolved">Resolved</option>
+                <option value="Pending">Pending</option>
+                <option value="Disaproved">Disapproved</option>
+              </select>
+            </span>
+            <Link to="/user" className="anchorbtn">
+              <i className="fa fa-arrow-circle-left" />
             Back to make a request
-          </Link>
+            </Link>
 
-          <div id="cardplaceholder">
-            {displaySearchCards}
+            <div id="cardplaceholder">
+              {displaySearchCards}
+            </div>
           </div>
-
-
         </div>
-
       </div>
     );
   }
