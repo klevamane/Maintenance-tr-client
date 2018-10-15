@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
-const PrivateRouteComponent = ({ component: Component, auth, ...rest }) => (
+export const PrivateRouteComponent = ({ component: Component, auth, ...rest }) => (
   <Route
     {...rest}
     render={props =>
@@ -14,7 +14,7 @@ const PrivateRouteComponent = ({ component: Component, auth, ...rest }) => (
 );
 
 PrivateRouteComponent.propTypes = {
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
